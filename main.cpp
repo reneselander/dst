@@ -79,23 +79,48 @@ int main() {
         // calculate the time in minutes
         case 3: 
 
-            int distanceCaseTime;
+            double distanceCaseTime;
             getInput(distanceCaseTime, "Distance (M): ");
 
-            int speedCaseTime;
+            double speedCaseTime;
             getInput(speedCaseTime, "Speed in knots: ");
 
             double ResultDistanceSpeed = 60 * distanceCaseTime / speedCaseTime;
 
             double MinToHour = ResultDistanceSpeed / 60;
 
-            std::cout << std::setprecision(4) << 60 * distanceCaseTime / speedCaseTime << " minutes (" << MinToHour << " hours)" << std::endl;
+            int ResultTimeTotal = distanceCaseTime * 60 / speedCaseTime;
+            
+            
+            
+            //get number of hours
+            int newHours = ResultTimeTotal / 60;
 
+            //get number of minutes
+            int newMins = ResultTimeTotal % 60;
+            
+            
+            if (ResultTimeTotal > 120)
+
+            {
+
+                //std::cout << std::setprecision(4) << 60 * distanceCaseTime / speedCaseTime << " minutes (" << MinToHour << " hours)" << std::endl;
+
+                std::cout << newHours << " hours and " << newMins << " minutes " << std::endl;
+
+            }
+
+            else
+
+            {
+                std::cout << newHours << " hour and " << newMins << " minutes " << std::endl;
+            }
+            
             std::cout << "" << std::endl;
 
-        }
+            }
 
-    } while (option != 4);
+            } while (option != 4);
 
     return 0;
 
