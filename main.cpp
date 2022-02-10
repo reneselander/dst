@@ -1,8 +1,10 @@
 #include <iostream>
-#include "input.h"
-#include <iomanip>
 
-// function menu
+    #include "input.h"
+
+        #include <iomanip>
+
+// Function menu
 void showMenu() {
 
     std::cout << "* * * * * CALCULATE * * * * *" << std::endl;
@@ -42,8 +44,7 @@ int main() {
 
         {
 
-            // calculate the speed
-            
+        // calculate the speed            
         case 1: 
 
             double distanceCaseSpeed;            
@@ -52,15 +53,14 @@ int main() {
             double timeCaseSpeed;
             getInput(timeCaseSpeed, "Time (in minutes): ");
 
-            std::cout << std::setprecision(2) << 60 * distanceCaseSpeed / timeCaseSpeed << " knots" << std::endl;
+            std::cout << std::setprecision(4) << 60 * distanceCaseSpeed / timeCaseSpeed << " knots" << std::endl;
 
             std::cout << "" << std::endl;
 
             continue;
 
 
-            // calculate the distance
-
+        // calculate the distance
         case 2: 
             
             double speedCaseDistance;
@@ -76,30 +76,20 @@ int main() {
             continue;
             
             
-            // calculate the time in minutes
-
+        // calculate the time in minutes
         case 3: 
-            
-            std::cout << "Distance (M): ";
 
-            double distanceCaseTime;
+            int distanceCaseTime;
+            getInput(distanceCaseTime, "Distance (M): ");
 
-            std::cin >> distanceCaseTime;
-
-            std::cout << "Speed (Knots): ";
-
-            double speedCaseTime;
-
-            std::cin >> speedCaseTime;
+            int speedCaseTime;
+            getInput(speedCaseTime, "Speed in knots: ");
 
             double ResultDistanceSpeed = 60 * distanceCaseTime / speedCaseTime;
 
             double MinToHour = ResultDistanceSpeed / 60;
 
-
             std::cout << std::setprecision(4) << 60 * distanceCaseTime / speedCaseTime << " minutes (" << MinToHour << " hours)" << std::endl;
-            //std::cout << 60 * distanceCaseTime / speedCaseTime << " minutes (" << MinToHour << " hours)" << std::endl;
-
 
             std::cout << "" << std::endl;
 
@@ -107,10 +97,6 @@ int main() {
 
     } while (option != 4);
 
-
     return 0;
-
-
-    system("pause>0");
 
 }
