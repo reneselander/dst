@@ -1,7 +1,5 @@
-
-
 #include <iostream>
-
+#include "input.h"
 #include <iomanip>
 
 // function menu
@@ -38,107 +36,51 @@ int main() {
 
         showMenu();
 
-        std::cout << "Choose: ";
-
-        std::cin >> option;
-
-        // clear the screen
-        system("cls");
-        std::system("cls");
+        getInput(option, "Choose (1 - 4): ");
 
         switch (option)
 
         {
 
             // calculate the speed
+            
+        case 1: 
 
-        case 1: std::cout << "Distance: ";
-
-            double distanceCaseSpeed;
-
-            while (!(std::cin >> distanceCaseSpeed))
-
-            {
-
-                // Explain error
-                std::cout << "ERROR! Only numbers accepted.\nEnter distance (in nautical miles): ";
-
-                // Clear input stream                
-                std::cin.clear();
-
-                // Discard previous input
-                std::cin.ignore(123, '\n');
-
-            }
-
-
-            /*cin >> distanceCaseSpeed;*/
-            std::cin >> distanceCaseSpeed;
-
-            std::cout << "Time (in minutes): ";
+            double distanceCaseSpeed;            
+            getInput(distanceCaseSpeed, "Enter distance in M (nautical miles): ");
 
             double timeCaseSpeed;
+            getInput(timeCaseSpeed, "Time (in minutes): ");
 
-            while (!(std::cin >> timeCaseSpeed))
-
-            {
-
-                // Explain error
-                std::cout << "ERROR! Only numbers accepted.\nEnter time (in minutes): ";
-
-                // Clear input stream                
-                std::cin.clear();
-
-                // Discard previous input
-                std::cin.ignore(123, '\n');
-
-            }
-
-            /*cin >> timeCaseSpeed;*/
-
-            std::cout << std::setprecision(3) << 60 * distanceCaseSpeed / timeCaseSpeed << " knots" << std::endl;
-
-            std::cin >> timeCaseSpeed;
-
-
-            std::cout << std::setprecision(3) << 60 * distanceCaseSpeed / timeCaseSpeed << " knots" << std::endl;
-
-            std::cout << std::setprecision(3) << 60 * distanceCaseSpeed / timeCaseSpeed << " knop" << std::endl;
-
+            std::cout << std::setprecision(2) << 60 * distanceCaseSpeed / timeCaseSpeed << " knots" << std::endl;
 
             std::cout << "" << std::endl;
 
-            break;
+            continue;
 
 
             // calculate the distance
 
-        case 2: std::cout << "Speed: ";
-
+        case 2: 
+            
             double speedCaseDistance;
-
-            std::cin >> speedCaseDistance;
-
-            std::cout << "Time (in minutes): ";
+            getInput(speedCaseDistance, "Speed in knots: ");
 
             double timeCaseDistance;
-
-            std::cin >> timeCaseDistance;
-
+            getInput(timeCaseDistance, "Time (in minutes): ");
 
             std::cout << std::fixed << std::setprecision(2) << speedCaseDistance * timeCaseDistance / 60 << " nautical miles" << std::endl;
 
-            std::cout << std::setprecision(3) << speedCaseDistance * timeCaseDistance / 60 << " nautical miles" << std::endl;
-
-
             std::cout << "" << std::endl;
 
-            break;
-
-
+            continue;
+            
+            
             // calculate the time in minutes
 
-        case 3: std::cout << "Distance (M): ";
+        case 3: 
+            
+            std::cout << "Distance (M): ";
 
             double distanceCaseTime;
 
@@ -156,19 +98,15 @@ int main() {
 
 
             std::cout << std::setprecision(4) << 60 * distanceCaseTime / speedCaseTime << " minutes (" << MinToHour << " hours)" << std::endl;
-            std::cout << 60 * distanceCaseTime / speedCaseTime << " minutes (" << MinToHour << " hours)" << std::endl;
+            //std::cout << 60 * distanceCaseTime / speedCaseTime << " minutes (" << MinToHour << " hours)" << std::endl;
 
 
             std::cout << "" << std::endl;
-
-            break;
 
         }
 
     } while (option != 4);
 
-
-    //system("pause>0");
 
     return 0;
 
