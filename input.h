@@ -1,6 +1,5 @@
-#pragma once
-
-//#include <iostream>
+#ifndef INPUT_H
+#define INPUT_H
 
 #include <string>
 
@@ -34,3 +33,5 @@ void getInput(T& input, const std::string msg)
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 }
+
+#endif
