@@ -4,7 +4,7 @@
 
         #include <iomanip>
 
-// Function menu
+// Function menu -
 void showMenu() {
 
     std::cout << "* * * * * CALCULATE * * * * *" << std::endl;
