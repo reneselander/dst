@@ -7,7 +7,7 @@
 // Function menu -
 void showMenu() {
 
-    std::cout << "* * * * * CALCULATE * * * * *" << std::endl;
+    std::cout << "* * * * * C A L C U L A T E * * * * *" << std::endl;
 
     std::cout << "" << std::endl;
 
